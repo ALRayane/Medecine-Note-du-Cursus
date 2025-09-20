@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Médical Grade Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e6f5e9;
+            color: #1b4d3e;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #1b4d3e;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th,
+        td {
+            padding: 8px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        th {
+            background-color: #c1e1c1;
+            text-align: left;
+        }
+
+        input[type="number"] {
+            width: 60px;
+            padding: 4px;
+            border: 1px solid #aaa;
+            border-radius: 4px;
+        }
+
+        .buttons {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        button {
+            margin: 5px;
+            background-color: #1b4d3e;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #256f5a;
+        }
+
+        .result {
+            font-size: 1.5em;
+            text-align: center;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Medical Cumulative GPA Calculator</h1>
+        <p>Enter your grades </p>
+    </header>
+
+    <div class="container">
+        <h2>3rd Year </h2>
+        <table>
+            <tr>
+                <th>Year</th>
+                <th>Coeff</th>
+                <th>Grade</th>
+            </tr>
+            <tr>
+                <td>3rd Year Average</td>
+                <td>26 (fixed)</td>
+                <td><input type="number" id="y3grade"></td>
+            </tr>
+        </table>
+
+        <h2>4th Year</h2>
+        <table>
+            <tr>
+                <th>Module</th>
+                <th>Coeff</th>
+                <th>Grade</th>
+            </tr>
+            <tr>
+                <td>Cardiologie</td>
+                <td><input type="number" id="coeff1"></td>
+                <td><input type="number" id="c1"></td>
+            </tr>
+            <tr>
+                <td>Pneumo - Phtisiologie</td>
+                <td><input type="number" id="coeff2"></td>
+                <td><input type="number" id="c2"></td>
+            </tr>
+            <tr>
+                <td>Maladies Infectieuses</td>
+                <td><input type="number" id="coeff3"></td>
+                <td><input type="number" id="c3"></td>
+            </tr>
+            <tr>
+                <td>Hépato - Gastro - Entérologie</td>
+                <td><input type="number" id="coeff4"></td>
+                <td><input type="number" id="c4"></td>
+            </tr>
+            <tr>
+                <td>ONCO-Hématologie</td>
+                <td><input type="number" id="coeff5"></td>
+                <td><input type="number" id="c5"></td>
+            </tr>
+            <tr>
+                <td>Neurologie</td>
+                <td><input type="number" id="coeff6"></td>
+                <td><input type="number" id="c6"></td>
+            </tr>
+        </table>
+
+        <h2>5th Year</h2>
+        <table>
+            <tr>
+                <th>Module</th>
+                <th>Coeff</th>
+                <th>Grade</th>
+            </tr>
+            <tr>
+                <td>Orthopédie.Traumatologie.Rééducation</td>
+                <td><input type="number" id="coeff7"></td>
+                <td><input type="number" id="c7"></td>
+            </tr>
+            <tr>
+                <td>Urologie-Néphrologie</td>
+                <td><input type="number" id="coeff8"></td>
+                <td><input type="number" id="c8"></td>
+            </tr>
+            <tr>
+                <td>Pédiatrie</td>
+                <td><input type="number" id="coeff9"></td>
+                <td><input type="number" id="c9"></td>
+            </tr>
+            <tr>
+                <td>Santé mentale</td>
+                <td><input type="number" id="coeff10"></td>
+                <td><input type="number" id="c10"></td>
+            </tr>
+            <tr>
+                <td>Gynécologie - Obstétrique</td>
+                <td><input type="number" id="coeff11"></td>
+                <td><input type="number" id="c11"></td>
+            </tr>
+            <tr>
+                <td>Endocrinologie-maladies métaboliques</td>
+                <td><input type="number" id="coeff12"></td>
+                <td><input type="number" id="c12"></td>
+            </tr>
+        </table>
+
+        <h2>6th Year</h2>
+        <table>
+            <tr>
+                <th>Module</th>
+                <th>Coeff</th>
+                <th>Grade</th>
+            </tr>
+            <tr>
+                <td>Oto.Rhino.Laryngologie</td>
+                <td><input type="number" id="coeff13"></td>
+                <td><input type="number" id="c13"></td>
+            </tr>
+            <tr>
+                <td>Ophtalmologie</td>
+                <td><input type="number" id="coeff14"></td>
+                <td><input type="number" id="c14"></td>
+            </tr>
+            <tr>
+                <td>Dermatologie</td>
+                <td><input type="number" id="coeff15"></td>
+                <td><input type="number" id="c15"></td>
+            </tr>
+            <tr>
+                <td>Epidémiologie</td>
+                <td><input type="number" id="coeff16"></td>
+                <td><input type="number" id="c16"></td>
+            </tr>
+            <tr>
+                <td>Médecine légale</td>
+                <td><input type="number" id="coeff17"></td>
+                <td><input type="number" id="c17"></td>
+            </tr>
+            <tr>
+                <td>Médecine du travail</td>
+                <td><input type="number" id="coeff18"></td>
+                <td><input type="number" id="c18"></td>
+            </tr>
+            <tr>
+                <td>Urgence médico-chirurgicale et thérapeutique</td>
+                <td><input type="number" id="coeff19"></td>
+                <td><input type="number" id="c19"></td>
+            </tr>
+            <tr>
+                <td>Maladies systémiques</td>
+                <td><input type="number" id="coeff20"></td>
+                <td><input type="number" id="c20"></td>
+            </tr>
+            <tr>
+                <td>Personne âgée</td>
+                <td><input type="number" id="coeff21"></td>
+                <td><input type="number" id="c21"></td>
+            </tr>
+        </table>
+
+        <div class="buttons">
+            <button onclick="calculate()">Calculate Grade</button>
+            <button onclick="resetCoefficients()">Reset Coefficients</button>
+        </div>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        // default coefficients array for modules (not including 3rd year)
+        const defaultCoeffs = [
+            2, 2, 2, 2, 2, 2, // 4th year
+            3, 1, 3, 1, 3, 1, // 5th year
+            1, 1, 1, 2, 2, 1, 2, 1, 1 // 6th year
+        ];
+        const year3Coeff = 26; // fixed coefficient for 3rd year
+
+        window.onload = resetCoefficients;
+
+        function resetCoefficients() {
+            for (let i = 1; i <= 21; i++) {
+                document.getElementById('coeff' + i).value = defaultCoeffs[i - 1];
+            }
+            document.getElementById('result').innerText = '';
+        }
+
+        function calculate() {
+            let totalWeighted = 0;
+            let totalCoeff = 0;
+
+            // include 3rd year
+            const y3grade = parseFloat(document.getElementById('y3grade').value);
+            if (!isNaN(y3grade)) {
+                totalWeighted += y3grade * year3Coeff;
+                totalCoeff += year3Coeff;
+            }
+
+            // include 4th,5th,6th years
+            for (let i = 1; i <= 21; i++) {
+                const grade = parseFloat(document.getElementById('c' + i).value);
+                const coeff = parseFloat(document.getElementById('coeff' + i).value);
+                if (!isNaN(grade) && !isNaN(coeff) && coeff > 0) {
+                    totalWeighted += grade * coeff;
+                    totalCoeff += coeff;
+                }
+            }
+
+            const resDiv = document.getElementById('result');
+            if (totalCoeff > 0) {
+                const avg = totalWeighted / totalCoeff;
+                resDiv.innerText =
+                    'Your overall grade is: ' + avg.toFixed(2) + '/20 (Total coefficients: ' + totalCoeff + ')';
+                resDiv.style.color = avg >= 10 ? '#1b4d3e' : '#b00020';
+            } else {
+                resDiv.innerText = 'Please enter at least one grade.';
+                resDiv.style.color = '#1b4d3e';
+            }
+        }
+    </script>
+</body>
+
+</html>
